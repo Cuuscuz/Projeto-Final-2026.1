@@ -32,29 +32,43 @@ usuarios = {}
 
 # Escolho o While True para o código em loop, até que o usuário encerre o programa.
 while True:
-    opc = int(input("""
+    opc = (input("""
+                 
         --USUÁRIOS--
     O que deseja fazer?
     1. Adicionar Usuário...
     2. Remover Usuário.....
     3. Listar Usuários.....
-    4. ....................
+    4. Realizar Login......
     5. Encerrar Programa...
     
     Digite a opção desejada: """))
 
-    if opc == 1:
+    if opc == "1":
         add_user(usuarios)
 
-    elif opc == 2:
+    elif opc == "2":
         del_user(usuarios)
 
-    elif opc == 3:
+    elif opc == "3":
         listar_user(usuarios)
 
-    elif opc == 5:
+    elif opc == "5":
         print("Programa encerrado!!!")
         break
         
+    elif opc == "4":
+        user = str(input("Informe o nome de usuário: "))
+
+        if user in usuarios:
+            senha = str(input("Informe a senha do usuário: "))
+            if senha == usuarios[user]:
+                print("Login realizado com sucesso!")
+                
+            else:
+                print("Senha incorreta!")
+
+        else:
+            print("Usuário não encontrado...")
     else:
         print("Opção inválida, selecione uma opção do menu!!!")
