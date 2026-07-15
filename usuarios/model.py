@@ -1,7 +1,4 @@
-from tarefas import controller 
-
-
-def add_user(usuarios):
+def add_user(usuarios): # Função de adicionar usuários.
     user = str(input("Digite o nome de usuário: "))
     # Deixei somente a variavel user por enquanto, já que o If verifica se o user existe antes de axigir a senha, caso não, ai ele pede a senha.
 
@@ -51,40 +48,3 @@ def login_user(usuarios):
 
     else:
         print("Usuário não encontrado...")
-
-
-# Crio o dicionário para guardar os usuários que posteriormente serão cadastrados.
-usuarios = {}
-
-# Escolho o While True para o código em loop, até que o usuário encerre o programa.
-while True:
-    opc = (input("""
-                 
-        --USUÁRIOS--
-    O que deseja fazer?
-    1. Adicionar Usuário...
-    2. Remover Usuário.....
-    3. Listar Usuários.....
-    4. Realizar Login......
-    5. Encerrar Programa...
-    
-    Digite a opção desejada: """))
-
-    if opc == "1":
-        add_user(usuarios)
-
-    elif opc == "2":
-        del_user(usuarios)
-
-    elif opc == "3":
-        listar_user(usuarios)
-
-    elif opc == "5":
-        print("Programa encerrado!!!")
-        break
-        
-    elif opc == "4":
-        login_user(usuarios)
-
-    else:
-        print("Opção inválida, selecione uma opção do menu!!!")
