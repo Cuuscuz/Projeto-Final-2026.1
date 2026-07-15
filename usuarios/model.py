@@ -1,51 +1,34 @@
 
-def add_user(usuarios): # Função de adicionar usuários.
-    user = str(input("Digite o nome de usuário: "))
-    # Deixei somente a variavel user por enquanto, já que o If verifica se o user existe antes de axigir a senha, caso não, ai ele pede a senha.
+# crio o dicionário para guardar os usuários cadastrados.
+usuarios = {}
 
-    if user in usuarios:
-        print("Usuário já existente!")
+def adicionar_usuario(nome, senha):
+    # Verifica se o usuário já existe.
+    if nome in usuarios:
+        return False
 
-    else:
-        senha = str(input("Digite a senha: "))
-        usuarios[user] = senha
-        # Adicionar usuário usando a função padrão do dicionário.
-        print(f"Usuário {user} adicionado!")
+    # Adiciona o usuário ao dicionário utilizndo o nome como chave
+    # e a senha como valor.
+    usuarios[nome] = senha
+    return True
 
-def del_user(usuarios): # Função para deletar usuarios
-    user = str(input("Informe o usuário que deseja remover: "))
-    if user in usuarios:
-        del usuarios[user]
-    # Usei a função Del para remover o usuário especifico do dicionário.
-        print(f"Usuário {user} deletado!")
+def remover_usuario(nome):
+    # Verifica se o usuario existe antes de remover.
+    if nome in usuarios:
+        # Remove o usuário utilizando a função padrão del
+        del usuarios[nome]
+        return True
 
-    else:
-        print("Usuário não encontrado!")
+    return False
 
-def listar_user(usuarios): # Função para Listar usuários.
-    if len(usuarios) == 0:
-        print("Lista de usuários vazia...")
+def listar_usuarios():
+    # Retorna todo o dicionario de usuários.
+    return usuarios
 
-    else:
-        for user in usuarios:
-            print(user)
-    # Listar os usuário cadastrados.
+def login(nome, senha):
+    # Verifica se o usuário existe e se a senha informada
+    # é igual a senha cadastrada.
+    if nome in usuarios and usuarios[nome] == senha:
+        return True
 
-def login_user(usuarios): # Função para realizar o login de usuário.
-    user = str(input("Informe o nome de usuário: "))
-
-    if user in usuarios:
-        senha = str(input("Informe a senha do usuário: "))
-        if senha == usuarios[user]:
-            print("Login realizado com sucesso!")
-
-            while True:
-                tarefas = []
-                controller.executar(tarefas)
-                break
-
-        else:
-            print("Senha incorreta!")
-
-    else:
-        print("Usuário não encontrado...")
+    return False
