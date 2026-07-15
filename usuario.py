@@ -79,12 +79,12 @@ while True:
     elif opc == "3":
         listar_user(usuarios)
 
+    elif opc == "4":
+        login_user(usuarios)
+        
     elif opc == "5":
         print("Programa encerrado!!!")
         break
-        
-    elif opc == "4":
-        login_user(usuarios)
 
     else:
         print("Opção inválida, selecione uma opção do menu!!!")

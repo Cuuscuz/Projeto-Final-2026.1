@@ -1,3 +1,4 @@
+
 def add_user(usuarios): # Função de adicionar usuários.
     user = str(input("Digite o nome de usuário: "))
     # Deixei somente a variavel user por enquanto, já que o If verifica se o user existe antes de axigir a senha, caso não, ai ele pede a senha.
@@ -11,7 +12,7 @@ def add_user(usuarios): # Função de adicionar usuários.
         # Adicionar usuário usando a função padrão do dicionário.
         print(f"Usuário {user} adicionado!")
 
-def del_user(usuarios):
+def del_user(usuarios): # Função para deletar usuarios
     user = str(input("Informe o usuário que deseja remover: "))
     if user in usuarios:
         del usuarios[user]
@@ -21,7 +22,7 @@ def del_user(usuarios):
     else:
         print("Usuário não encontrado!")
 
-def listar_user(usuarios):
+def listar_user(usuarios): # Função para Listar usuários.
     if len(usuarios) == 0:
         print("Lista de usuários vazia...")
 
@@ -30,7 +31,7 @@ def listar_user(usuarios):
             print(user)
     # Listar os usuário cadastrados.
 
-def login_user(usuarios):
+def login_user(usuarios): # Função para realizar o login de usuário.
     user = str(input("Informe o nome de usuário: "))
 
     if user in usuarios:
