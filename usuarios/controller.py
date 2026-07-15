@@ -1,6 +1,5 @@
-
-import model
-import view
+from usuarios import model
+from usuarios import view
 from tarefas import controller
 
 
